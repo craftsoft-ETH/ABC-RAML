@@ -1,0 +1,57 @@
+#%RAML 1.0
+title: craft-users-api-012
+version: v1
+baseUri: api/v1
+# localhost:8081/api/users
+/users:
+  get:
+    description: Get User list
+    responses:
+      200:
+        description: Get Successful Resp
+        body:
+          application/json:
+            example:
+              [
+                
+                {
+                     "id": 5,
+                      "first_name": "Erny",
+                      "last_name": "Mart",
+                      "email": "emart4@mit.edu",
+                      "title": "Honorable",
+                      "phone": "724-122-1507"
+                
+                },
+                {
+                 "id": 2225,
+                      "first_name": "Erny",
+                      "last_name": "Mart",
+                      "email": "emart4@mit.edu",
+                      "title": "Honorable",
+                      "phone": "724-122-1507"
+                }
+              ]
+  post:
+    description: Register a new user
+    body:
+      application/json:
+        example:
+          {
+            "first_name": "John",
+            "last_name": "Doe",
+            "email": "jdoe@example.com",
+            "title": "Mr",
+            "phone": "123-456-7890"
+          }
+    responses:
+      201:
+        description: User successfully registered
+        body:
+          application/json:
+            example:
+              {
+                "Reg-UserID": 1234,
+                "Message": "User successfully"
+                
+              }
